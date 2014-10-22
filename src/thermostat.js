@@ -10,7 +10,20 @@ Thermostat.prototype.increaseTemperature = function() {
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-  this.temperature += degrees;
+  if(this._isIncreaseValid(degrees)) {
+    this.temperature += degrees;
+  } else {
+    this._setToMaxTemp()
+  };
+};
+
+
+Thermostat.prototype._isIncreaseValid = function(degrees) {
+  return this.maximumTemperature > (this.temperature + degrees)
+};
+
+Thermostat.prototype._setToMaxTemp = function(first_argument) {
+  this.temperature = this.maximumTemperature
 };
 
 Thermostat.prototype.decreaseTemperature = function() {

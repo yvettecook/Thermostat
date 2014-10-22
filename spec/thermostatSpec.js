@@ -53,14 +53,21 @@ var thermostat;
 
     });
 
+    it('it will not go above its maximum temperature', function() {
+
+      thermostat.increaseTemperatureBy(20);
+      expect(thermostat.temperature).toEqual(25);
+
+    });
+
   });
 
   describe('custom settings', function () {
 
     it('can increase temperature by 10', function () {
 
-      thermostat.increaseTemperatureBy(10)
-      expect(thermostat.temperature).toEqual(30)
+      thermostat.increaseTemperatureBy(5)
+      expect(thermostat.temperature).toEqual(25)
 
     });
 
