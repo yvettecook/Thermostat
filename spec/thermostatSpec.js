@@ -6,7 +6,7 @@ var thermostat;
       thermostat = new Thermostat
     });
 
-  describe('default settings', function () {
+  describe('default temperature settings', function () {
 
     it('is 20 degrees', function () {
 
@@ -46,8 +46,6 @@ var thermostat;
 
     });
 
-
-
     it('it will not go below its minimum temperature', function() {
 
       thermostat.decreaseTemperatureBy(15);
@@ -72,6 +70,39 @@ var thermostat;
       expect(thermostat.temperature).toEqual(15);
 
     });
+
+  });
+
+  describe('Power saving mode', function () {
+
+      it('is on by default', function (){
+
+        expect(thermostat.powerSaverStatus).toEqual(true);
+
+      });
+
+      it('when on, the maximum temperature is 25 degrees', function() {
+
+        expect(thermostat.maximumTemperature).toEqual(25);
+
+      });
+
+      it('can be turned off', function() {
+
+        thermostat.turnOffPowerSaver()
+        expect(thermostat.powerSaverStatus).toEqual(false)
+
+      });
+
+      it('when off, the maximum temperature is 32 degrees', function () {
+
+        thermostat.turnOffPowerSaver();
+        expect(thermostat.maximumTemperature).toEqual(32)
+
+      });
+
+
+
 
   });
 
