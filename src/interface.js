@@ -1,29 +1,23 @@
-function ThermostatView () {
-	
-	
-}
+function ThermostatView(element) {
+	this.element = $(element);
+	this.thermostat = new Thermostat;
+	this.element.text(this.thermostat.temperature);
+	this.bindTo('#increaseTemperature', this.thermostat, this.thermostat.increaseTemperature, this.element);
+	this.bindTo('#decreaseTemperature', this.thermostat, this.thermostat.decreaseTemperature, this.element);
+	this.bindTo('#resetTemperature', this.thermostat, this.thermostat.resetTemperature, this.element);
+};
 
-$(document).ready(function() { });
+ThermostatView.prototype.bindTo = function(control, obj, func, element) { 
+	$(control).on('click', function() {
+		element.text(func.call(obj));
+	});
+};
 
-var thermostat = new Thermostat
-$('.temperature h1').text(thermostat.temperature);
 
-$('#increaseTemperature').on('click', function () {
-	$('.temperature h1').text(thermostat.increaseTemperature());
+
+$(document).ready(function() {
+
+	new ThermostatView('.temperature h1')
+
 });
-
-$('#decreaseTemperature').on('click', function () {
-	$('.temperature h1').text(thermostat.decreaseTemperature());
-});
-
-$('#resetTemperature').on('click', function () {
-	$('.temperature h1').text(thermostat.resetTemperature());
-});
-
-
-
-
-
-//Step 1: change h1 number to a temperature of the thermostat - BOOOOOOM! Test passed!
-//Step 2: bind the increaseTemperature element to the javascript method
 
