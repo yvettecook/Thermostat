@@ -1,3 +1,8 @@
+function ThermostatView () {
+	
+	
+}
+
 $(document).ready(function() { });
 
 var thermostat = new Thermostat
@@ -14,6 +19,7 @@ $('#decreaseTemperature').on('click', function () {
 $('#resetTemperature').on('click', function () {
 	$('.temperature h1').text(thermostat.resetTemperature());
 });
+
 
 
 
