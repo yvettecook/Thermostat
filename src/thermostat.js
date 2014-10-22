@@ -6,14 +6,14 @@ function Thermostat () {
 };
 
 Thermostat.prototype.increaseTemperature = function() {
-  this.increaseTemperatureBy(1);
+   return this.increaseTemperatureBy(1);
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
   if(this._isIncreaseValid(degrees)) {
-    this.temperature += degrees;
+    return this.temperature += degrees;
   } else {
-    this._setToMaxTemp()
+    return this._setToMaxTemp()
   };
 };
 
@@ -27,14 +27,14 @@ Thermostat.prototype._setToMaxTemp = function(first_argument) {
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-  this.decreaseTemperatureBy(1);
+ return this.decreaseTemperatureBy(1);
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
   if (this._isDecreaseValid(degrees)) { 
-    this.temperature -= degrees; 
+    return this.temperature -= degrees; 
   } else { 
-    this._setToMinTemp()
+    return this._setToMinTemp()
   };
 };
 
@@ -52,5 +52,5 @@ Thermostat.prototype.turnOffPowerSaver = function() {
 };
 
 Thermostat.prototype.resetTemperature = function() {
-  this.temperature = 20;
+  return this.temperature = 20;
 };
