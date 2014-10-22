@@ -28,6 +28,33 @@ var thermostat;
 
     });
 
+    it('has a minimum temperature of 10 degrees', function () {
+
+     expect(thermostat.minimumTemperature).toEqual(10);
+
+    });
+
+    it('can check if requested temperature is below the minimum', function () {
+
+      expect(thermostat._isDecreaseValid(15)).toBe(false);
+
+    });
+
+     it('can check if requested temperature is above the minimum', function () {
+
+      expect(thermostat._isDecreaseValid(2)).toBe(true);
+
+    });
+
+
+
+    it('it will not go below its minimum temperature', function() {
+
+      thermostat.decreaseTemperatureBy(15);
+      expect(thermostat.temperature).toEqual(10);
+
+    });
+
   });
 
   describe('custom settings', function () {
