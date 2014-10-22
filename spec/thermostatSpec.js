@@ -60,6 +60,13 @@ var thermostat;
 
     });
 
+    it('can reset temperature to 20 degrees', function () {
+
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20);
+
+    });
+
   });
 
   describe('custom settings', function () {

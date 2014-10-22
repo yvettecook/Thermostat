@@ -50,3 +50,7 @@ Thermostat.prototype.turnOffPowerSaver = function() {
   this.powerSaverStatus = false;
   this.maximumTemperature = 32;
 };
+
+Thermostat.prototype.resetTemperature = function() {
+  this.temperature = 20;
+};
