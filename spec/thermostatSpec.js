@@ -115,6 +115,14 @@ var thermostat;
 
       });
 
+      it('when turned back on, the maximum temperature is reset to 25', function() {
+
+        thermostat.turnOffPowerSaver()
+        thermostat.turnOnPowerSaver()
+        expect(thermostat.maximumTemperature).toEqual(25)
+
+      });
+
 
 
 
