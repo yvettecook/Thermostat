@@ -42,7 +42,7 @@ Thermostat.prototype._setToMinTemp = function() {
 
 Thermostat.prototype.turnOffPowerSaver = function() {
   this.powerSaverStatus = false;
-  this._setMaximumTemperature(32);
+  this._setNewMaximumTemperature(32);
 };
 
 Thermostat.prototype.turnOnPowerSaver = function() {

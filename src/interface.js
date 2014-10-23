@@ -13,13 +13,14 @@ ThermostatView.prototype.bindTo = function(control, obj, func, element) {
 	});
 };
  
-// ThermostatView.prototype.bindTo = function(control, obj, func) { 
-// 	$(control).on('click', function() {
-// 		$('.temperature h1').text(func.call(obj));
-// 	});
-// };
-
 $(document).ready(function() {
 	new ThermostatView('.temperature h1')
 });
+
+
+
+$.getJSON("http://api.openweathermap.org/data/2.5/find?q=London&units=metric", function(data) { 
+		var currentWeather = (data['list'][1]['main']['temp']);
+		$('.outside_temperature h1').text(currentWeather)
+	});
 
