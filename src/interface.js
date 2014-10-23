@@ -12,12 +12,14 @@ ThermostatView.prototype.bindTo = function(control, obj, func, element) {
 		element.text(func.call(obj));
 	});
 };
-
-
+ 
+// ThermostatView.prototype.bindTo = function(control, obj, func) { 
+// 	$(control).on('click', function() {
+// 		$('.temperature h1').text(func.call(obj));
+// 	});
+// };
 
 $(document).ready(function() {
-
 	new ThermostatView('.temperature h1')
-
 });
 
