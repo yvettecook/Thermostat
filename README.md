@@ -21,3 +21,11 @@ Tools
 =========
 
 Javascript
+
+
+To Run
+=========
+
+Clone the repository, and then run:
+
+` open src/index.html `
